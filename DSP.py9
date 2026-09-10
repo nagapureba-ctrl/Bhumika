@@ -1,0 +1,63 @@
+# Aim: To implement stack operations and convert
+# infix expression to postfix.
+
+# Stack operations
+stack = []
+
+# Push operation
+stack.append(10)
+stack.append(20)
+stack.append(30)
+print("Stack after push:", stack)
+
+# Pop operation
+print("Popped element:", stack.pop())
+print("Stack after pop:", stack)
+
+# Peek operation
+print("Top element:", stack[-1])
+
+
+# Infix to Postfix Conversion
+def precedence(operator):
+    if operator == '+' or operator == '-':
+        return 1
+    if operator == '*' or operator == '/':
+        return 2
+    if operator == '^':
+        return 3
+    return 0
+
+
+def infix_to_postfix(expression):
+    operators = []
+    postfix = ""
+
+    for char in expression:
+        if char.isalnum():
+            postfix += char
+
+        elif char == '(':
+            operators.append(char)
+
+        elif char == ')':
+            while operators and operators[-1] != '(':
+                postfix += operators.pop()
+            operators.pop()
+
+        else:
+            while (operators and operators[-1] != '(' and
+                   precedence(operators[-1]) >= precedence(char)):
+                postfix += operators.pop()
+
+            operators.append(char)
+
+    while operators:
+        postfix += operators.pop()
+
+    return postfix
+
+
+expression = "A+B*C"
+print("Infix Expression:", expression)
+print("Postfix Expression:", infix_to_postfix(expression))
