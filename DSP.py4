@@ -1,0 +1,46 @@
+# Aim: To perform operations on Tuple, Set, and Dictionary.
+
+# ---------------- TUPLE ----------------
+t = (10, 20, 30, 40, 50)
+
+print("Tuple:", t)
+print("First element:", t[0])
+print("Last element:", t[-1])
+print("Sliced tuple:", t[1:4])
+print("Length of tuple:", len(t))
+
+# ---------------- SET ----------------
+s = {10, 20, 30, 40}
+
+print("\nSet:", s)
+
+s.add(50)
+print("After adding 50:", s)
+
+s.remove(20)
+print("After removing 20:", s)
+
+s2 = {30, 40, 50, 60}
+
+print("Union:", s.union(s2))
+print("Intersection:", s.intersection(s2))
+
+# ---------------- DICTIONARY ----------------
+student = {
+    "Name": "Divyanshi",
+    "Roll No": 39,
+    "Course": "Data Science"
+}
+
+print("\nDictionary:", student)
+
+print("Name:", student["Name"])
+
+student["Marks"] = 85
+print("After adding Marks:", student)
+
+student["Course"] = "CSE Data Science"
+print("After updating Course:", student)
+
+del student["Roll No"]
+print("After deleting Roll No:", student)
