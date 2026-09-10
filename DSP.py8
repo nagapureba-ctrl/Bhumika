@@ -1,0 +1,53 @@
+# ---------- Singly Linked List ----------
+class SNode:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+head = SNode(10)
+head.next = SNode(20)
+head.next.next = SNode(30)
+
+print("Singly Linked List:")
+temp = head
+while temp:
+    print(temp.data, end=" -> ")
+    temp = temp.next
+print("None")
+
+
+# ---------- Doubly Linked List ----------
+class DNode:
+    def __init__(self, data):
+        self.data = data
+        self.prev = None
+        self.next = None
+
+d1 = DNode(10)
+d2 = DNode(20)
+d3 = DNode(30)
+
+d1.next = d2
+d2.prev = d1
+d2.next = d3
+d3.prev = d2
+
+print("\nDoubly Linked List:")
+temp = d1
+while temp:
+    print(temp.data, end=" <-> ")
+    temp = temp.next
+print("None")
+
+
+# ---------- Circular Linked List ----------
+class CNode:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+c1 = CNode(10)
+c2 = CNode(20)
+c3 = CNode(30)
+
+c1.next = c2
