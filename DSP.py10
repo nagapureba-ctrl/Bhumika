@@ -1,0 +1,26 @@
+from collections import deque
+
+# Stack - LIFO
+stack = []
+
+stack.append("Task 1")
+stack.append("Task 2")
+stack.append("Task 3")
+
+print("Stack:", stack)
+
+print("Completed from Stack:", stack.pop())
+print("Stack after completion:", stack)
+
+
+# Queue - FIFO
+queue = deque()
+
+queue.append("Task A")
+queue.append("Task B")
+queue.append("Task C")
+
+print("\nQueue:", list(queue))
+
+print("Completed from Queue:", queue.popleft())
+print("Queue after completion:", list(queue))
