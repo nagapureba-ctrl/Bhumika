@@ -1,0 +1,18 @@
+import mymodule
+import math
+import random
+
+a = 10
+b = 5
+
+# User-defined module
+print("Addition =", mymodule.add(a, b))
+print("Square of a =", mymodule.square(a))
+
+# Built-in math module
+print("Square root of 25 =", math.sqrt(25))
+print("Power of 2^3 =", math.pow(2, 3))
+print("Factorial of 5 =", math.factorial(5))
+
+# Built-in random module
+print("Random number =", random.randint(1, 100))
